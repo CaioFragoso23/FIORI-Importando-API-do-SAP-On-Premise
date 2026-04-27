@@ -1,0 +1,95 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/API_BUSINESS_PARTNER/$metadata">
+        <edmx:Include Namespace="API_BUSINESS_PARTNER" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+
+<Annotations Target="SAP.A_CustomerType">
+            
+            <Annotation Term="UI.SelectionFields">
+                <Collection>
+                    <PropertyPath>Customer</PropertyPath>
+                    <PropertyPath>CustomerName</PropertyPath>
+                </Collection>
+            </Annotation>
+
+            <Annotation Term="UI.LineItem">
+                <Collection>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Account group" />
+                        <PropertyValue Property="Value" Path="Customer" />
+                    </Record>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Attribute 10" />
+                        <PropertyValue Property="Value" Path="CustomerName" />
+                    </Record>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Country" />
+                        <PropertyValue Property="Value" Path="County" />
+                    </Record>
+                </Collection>
+            </Annotation>
+
+            <Annotation Term="UI.HeaderInfo">
+                <Record Type="UI.HeaderInfoType">
+                    <PropertyValue Property="TypeName" String="Cliente" />
+                    <PropertyValue Property="TypeNamePlural" String="Clientes" />
+                    <PropertyValue Property="Title">
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerName" /> 
+                        </Record>
+                    </PropertyValue>
+                    <PropertyValue Property="Description">
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer" />
+                        </Record>
+                    </PropertyValue>
+                </Record>
+            </Annotation>
+
+            <Annotation Term="UI.Facets">
+                <Collection>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="ID" String="SecaoInfoGerais" />
+                        <PropertyValue Property="Label" String="Informações Gerais" />
+                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GrupoGeral" />
+                    </Record>
+                </Collection>
+            </Annotation>
+
+            <Annotation Term="UI.FieldGroup" Qualifier="GrupoGeral">
+                <Record Type="UI.FieldGroupType">
+                    <PropertyValue Property="Data">
+                        <Collection>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Código do Cliente" />
+                                <PropertyValue Property="Value" Path="Customer" />
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Nome do Cliente" />
+                                <PropertyValue Property="Value" Path="CustomerName" />
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="País" />
+                                <PropertyValue Property="Value" Path="County" />
+                            </Record>
+                        </Collection>
+                    </PropertyValue>
+                </Record>
+            </Annotation>
+            
+        </Annotations>
+
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
