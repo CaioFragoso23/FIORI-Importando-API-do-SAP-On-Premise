@@ -40,6 +40,7 @@ Relatório de Business Partners
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+
 # 🤝 Contribuintes
 * **[Caio](https://github.com/CaioFragoso23)**
 * **[Israel](https://github.com/IsraFerreira)** 
